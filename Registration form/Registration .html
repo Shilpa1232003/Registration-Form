@@ -1,0 +1,105 @@
+<html>
+<head>
+    <title>Registration</title>
+   
+     <style>
+     body{
+        background-image: url(image.jpg);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        background-attachment: fixed;
+     }
+     div{
+    margin:auto;
+    width:35%;
+    padding:30px;
+    font-size:20px;
+}
+input[type=text],select
+{
+    width:400px;
+    height:40px;
+    padding:12px 20px;
+    margin:8px;
+    display:inline-block;
+    border:1px salmon #ccc;
+    box-sizing: border-box;
+    font-size:20x;
+}
+    </style>
+    <script>
+      function validate()
+      {
+        var num=document.getElementById("age").value;
+        var num1=document.getElementById("phone").value;
+        if(num==""&&num1=="")
+        {
+          document.getElementById("message").innerHTML="**Please fill age ";
+          document.getElementById("message1").innerHTML="**Please fill phone number ";
+          return false;
+        }
+        if(isNaN(num))
+        {
+          document.getElementById("message").innerHTML="**Age must be numeric value";
+          return false;
+        }
+        if(isNaN(num)&&isNaN(num1))
+        {
+          document.getElementById("message").innerHTML="**Age must be numeric value";
+          document.getElementById("message1").innerHTML="**Phone number must be numeric value";
+          return false;
+        }
+        if(num.length>3)
+        {
+          document.getElementById("message").innerHTML="**Age should be less than 3 digit";
+          return false;
+        }
+       
+        if(isNaN(num1))
+        {
+          document.getElementById("message1").innerHTML="**Phone number must be numeric value";
+          return false;
+        }
+      
+        if(num1.length>10)
+        {
+          document.getElementById("message1").innerHTML="**Phone number must be 10";
+          return false;
+        }
+        
+        if(num1.length<10)
+        {
+          document.getElementById("message1").innerHTML="**Phone number must be 10";
+          return false;
+        }
+
+      }
+      </script>
+</head>
+<body>
+  <h1 align="center">Registration form</h1><br>
+<div>
+  <form onsubmit="return validate()">
+   Name:<br>
+    <input type="text" name="name" id="name" size="30" placeholder="Enter Name"><br>
+<span id="names"></span>
+    Email:<br><input id="text" type="text" id="mail"  name="email" placeholder="Enter gmail">
+    <br>
+<span id="gmail"></span>
+    Age:<br><input type="text" id="age" size="3" placeholder="Age" >
+    <br>
+
+    <span id="message" style="color:red;"></span><br>
+    Phone number:<br><input type="text" id="phone" placeholder="Phone number" value=""><br>
+    <span id="message1" style="color:red;"></span><br>
+    Date:<br>
+    <input type="date"><br>
+    <span id="dates"></span>
+
+   <br>
+  <input type="submit" value="Submit" >
+   </form>
+</div>
+</body>
+</html>

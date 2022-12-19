@@ -1,0 +1,80 @@
+<html>
+<head>
+    <title>Registration</title>
+    <style type="text/css">
+        body{
+           background-image: url(image.jpg);
+           background-repeat: no-repeat;
+           background-position: center;
+           background-size: cover;
+           background-attachment: fixed;
+        }
+        div{
+             margin:auto;
+             width:35%;
+            padding:30px;
+            font-size:20px;
+        }
+        input{
+    width:400px;
+    height:40px;
+    border-radius: 10px;
+    border:2px rgb(13, 163, 232) #ccc;
+    font-size:20x;
+}
+
+     </style>
+</head>
+<body>
+  <h1 align="center">Registration form</h1><br>
+<div>
+  <form action="#" autocomplete="off" onsubmit="return validate()">
+   Name:<br><input type="text"  id="name" size="30" placeholder="Enter Name"><br>
+<span id="names" style="color: red; font-size: 20px;"></span><br>
+    Email:<br><input type="text"  id="mail" placeholder="Enter gmail"><br>
+<span id="gmail"  style="color: red;  font-size: 20px;"></span><br>
+    Age:<br><input type="text" id="age" size="3" placeholder="Age" > <br>
+ <span id="message"  style="color: red;  font-size: 20px;"></span><br>
+    Phone number:<br><input type="text" id="phone" placeholder="Phone number" value=""><br>
+    <span id="message1"  style="color: red;  font-size: 20px;"></span><br>
+    Date:<br>
+    <input type="date"><br>
+    <span id="dates"></span>
+
+   <br>
+  <input type="submit"  value="Submit">
+   </form>
+   <script type="text/javascript">
+    function validate()
+    {
+        var name=document.getElementById('name').value;
+        var correct=/^[A-Za-z]+$/;
+        var mail=document.getElementById('mail').value;
+        var age=document.getElementById('age').value;
+        var phone=document.getElementById('phone').value;
+      
+        if(name=="")
+        {   
+            document.getElementById('names').innerHTML="**Please enter name";
+        
+
+        }
+        if(mail=="")
+        {   
+            document.getElementById('gmail').innerHTML="**Please enter email";
+        }
+        
+        if(age=="")
+        {   
+            document.getElementById('message').innerHTML="**Please enter age";
+        }
+        
+        if(phone=="")
+        {   
+            document.getElementById('message1').innerHTML="**Please enter phone number";
+        }
+    }
+   </script>
+</div>
+</body>
+</html>
